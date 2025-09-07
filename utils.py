@@ -27,7 +27,6 @@ def parse_parts(service, parts, folder_name, message):
     """
     Utility function that parses the content of an email partition
     """
-    count = 0
     if parts:
         for part in parts:
             filename = part.get("filename")
