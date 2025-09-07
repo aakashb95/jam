@@ -6,7 +6,7 @@ class Settings(BaseSettings):
         env_file=".env", env_file_encoding="utf-8", extra="ignore"
     )
 
-    GEMINI_API_KEY: str = "AI..."
+    OPENAI_API_KEY: str = "AI..."
 
 
 settings = Settings()
