@@ -5,3 +5,4 @@ __pycache__
 emails/
 credentials.json
 token.json
+.env
