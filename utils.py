@@ -1,6 +1,6 @@
-import os
 import re
 from base64 import urlsafe_b64decode
+from pathlib import Path
 
 
 # utility functions
@@ -49,7 +49,7 @@ def parse_parts(service, parts, folder_name, message):
                 # save the HTML file and optionally open it in the browser
                 if not filename:
                     filename = "index.html"
-                filepath = os.path.join(folder_name, filename)
+                filepath = Path(folder_name) / filename
                 print("Saving HTML to", filepath)
                 with open(filepath, "wb") as f:
                     f.write(urlsafe_b64decode(data))
@@ -81,7 +81,7 @@ def parse_parts(service, parts, folder_name, message):
                                 .execute()
                             )
                             data = attachment.get("data")
-                            filepath = os.path.join(folder_name, filename)
+                            filepath = Path(folder_name) / filename
                             if data:
                                 with open(filepath, "wb") as f:
                                     f.write(urlsafe_b64decode(data))

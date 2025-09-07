@@ -1,5 +1,5 @@
 import json
-import os
+from pathlib import Path
 
 from google_auth_oauthlib.flow import InstalledAppFlow
 
@@ -78,7 +78,7 @@ def read_message(service, message):
                     folder_name = clean(value)
                     # we will also handle emails with the same subject name
                     folder_counter = 0
-                    while os.path.isdir(folder_name):
+                    while Path(folder_name).is_dir():
                         folder_counter += 1
                         # we have the same folder name, add a number next to it
                         if folder_name[-1].isdigit() and folder_name[-2] == "_":
@@ -89,7 +89,7 @@ def read_message(service, message):
                             folder_name = f"{folder_name}_{folder_counter}"
                 else:
                     print(f"Not job based: {value}")
-                os.makedirs(folder_name, exist_ok=True)
+                Path(folder_name).mkdir(exist_ok=True)
                 print("Subject:", value)
             if name.lower() == "date":
                 # we print the date when the message was sent
@@ -97,8 +97,8 @@ def read_message(service, message):
     if not has_subject:
         # if the email does not have a subject, then make a folder with "email" name
         # since folders are created based on subjects
-        if not os.path.isdir(folder_name):
-            os.mkdir(folder_name)
+        if not Path(folder_name).is_dir():
+            Path(folder_name).mkdir()
     parse_parts(service, parts, folder_name, message)
     print("=" * 50)
 
