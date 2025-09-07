@@ -1,7 +1,7 @@
 # 🚧 Job application monitoring system 🚧
 
-Problem statement:
-Jobs are applied via various portals, recruiters revert with a different email id of acceptance/rejection. Your inbox is the single source of truth.
+### Problem statement: <br>
+Jobs are applied via various portals, recruiters revert with a different email id of acceptance/rejection, status of each application becomes difficult to track and  your inbox is the only source of truth.
 
 It is 2025, spray and pray will not work and ideally there should be an excel sheet
 with list of companies applied to. If the outreach is intentional, that list should be pretty small and easy to track manually.
