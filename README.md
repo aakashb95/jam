@@ -1,4 +1,4 @@
-# Job application monitoring system
+# 🚧 Job application monitoring system 🚧
 
 Problem statement:
 Jobs are applied via various portals, recruiters revert with a different email id of acceptance/rejection. Your inbox is the single source of truth.
@@ -11,3 +11,17 @@ But most of us don't do that. Easy Apply gives the sense of accomplishment and w
 So, what if there is a program that you can run locally, that polls your gmail and maintains the list for you?
 
 This project is an attempt at that.
+
+## What you need
+- Gmail API access enabled for your account with credentials. [Link](https://developers.google.com/workspace/gmail/api/quickstart/python)
+- OpenAI API key for `gpt-5-nano` 
+
+## TODO:
+- [] Complete the pipeline and store in a database
+- [] Compare domain and map HR/auto-responses to applied jobs
+- [] Should be simple to run, `docker compose` and easy teardown
+- [] Don't refetch same emails
+- [] Local lightweight model for parsing for true local app
+
+## Credits
+Code borrowed from [this article](https://thepythoncode.com/article/use-gmail-api-in-python#Searching_for_Emails)
